@@ -1,4 +1,4 @@
-import { Apex7Mark } from "./Marks";
+import logo from "../assets/apex_logo.png";
 
 function XIcon() {
   return (
@@ -83,12 +83,9 @@ export function CTAFooter() {
 
       <footer className="border-t border-line/60 py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center sm:flex-row sm:justify-between sm:text-left">
-          <div className="flex items-center gap-2.5">
-            <Apex7Mark className="h-6 w-6" />
-            <span className="font-display text-xs font-bold tracking-wide text-ice-dim">
-              APEX7
-            </span>
-          </div>
+          <a href="/" className="">
+            <img src={logo} alt="APEX7" className="w-20 h-10" />
+          </a>
 
           <p className="max-w-md font-mono text-xs text-steel">
             Real money software. Nothing on this page is financial advice. No
