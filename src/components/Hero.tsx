@@ -38,7 +38,7 @@ export function Hero() {
       />
 
       <div className="mx-auto grid max-w-6xl gap-14 px-6 pb-20 pt-16 md:grid-cols-2 md:items-center md:pb-28 md:pt-24">
-        <div data-aos="fade-up" data-aos-duration="900">
+        <div className="min-w-0" data-aos="fade-up" data-aos-duration="900">
           <ChainChip />
           <p className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-lemon">
             Autonomous Portfolio Execution — 7
@@ -55,16 +55,16 @@ export function Hero() {
             is checked against your limits before it executes — and logged with
             the reasoning behind it.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-col  sm:flex-row items-center gap-4">
             <a
               href="#launch"
-              className="rounded-md bg-lemon px-6 py-3 text-sm font-semibold text-arctic transition hover:bg-lemon-dim"
+              className="rounded-md bg-lemon px-6 py-3 text-sm font-semibold text-arctic transition hover:bg-lemon-dim w-full text-center"
             >
               Deploy an agent
             </a>
             <a
               href="#how-it-works"
-              className="rounded-md border border-line px-6 py-3 text-sm font-medium text-ice-dim transition hover:border-steel hover:text-ice"
+              className="rounded-md border border-line px-6 py-3 text-sm font-medium text-ice-dim transition hover:border-steel hover:text-ice w-full text-center"
             >
               See how it works
             </a>
@@ -74,7 +74,12 @@ export function Hero() {
           </p>
         </div>
 
-        <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+        <div
+          className="min-w-0"
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="200"
+        >
           <AgentLogTicker />
         </div>
       </div>

@@ -19,44 +19,49 @@ function ReticleCorner({ position }: { position: "tl" | "tr" | "bl" | "br" }) {
 }
 
 export function AgentLogTicker() {
-  // duplicate the list so the CSS loop can scroll seamlessly
   const doubled = [...logEntries, ...logEntries];
 
   return (
     <div
-      className="relative h-72 overflow-hidden rounded-md border border-line bg-panel/90"
+      className="relative h-64 overflow-hidden rounded-md border border-line bg-panel/90 sm:h-72"
       aria-hidden="true"
     >
       <ReticleCorner position="tl" />
       <ReticleCorner position="tr" />
       <ReticleCorner position="bl" />
       <ReticleCorner position="br" />
-      <div className="flex items-center justify-between gap-2 border-b border-line px-5 py-3">
-        <div className="flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-lemon animate-pulse-soft" />
-          <span className="font-mono text-xs uppercase tracking-wider text-ice-dim">
+      <div className="flex items-center justify-between gap-2 border-b border-line px-3 py-3 sm:px-5">
+        <div className="flex min-w-0 items-center gap-2">
+          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-lemon animate-pulse-soft" />
+          <span className="truncate font-mono text-[10px] uppercase tracking-wider text-ice-dim sm:text-xs">
             agent · alpha-01 · tracking
           </span>
         </div>
-        <span className="font-mono text-[10px] text-steel">
+        <span className="hidden shrink-0 font-mono text-[10px] text-steel sm:inline">
           sample activity
         </span>
       </div>
       <div className="pointer-events-none absolute inset-x-0 top-11 z-10 h-8 bg-gradient-to-b from-panel to-transparent" />
-      <div className="animate-scroll-up px-5 py-4">
+      <div className="animate-scroll-up px-3 py-4 sm:px-5">
         {doubled.map((entry, i) => (
           <div
             key={i}
-            className="flex items-baseline gap-3 border-b border-line/60 py-2.5 font-mono text-xs last:border-none"
+            className="flex items-baseline gap-2 border-b border-line/60 py-2.5 font-mono text-xs last:border-none sm:gap-3"
           >
-            <span className="text-ice-dim/60">{entry.time}</span>
+            <span className="hidden shrink-0 text-ice-dim/60 sm:inline">
+              {entry.time}
+            </span>
             <span
-              className={`w-10 shrink-0 font-medium ${actionStyle[entry.action]}`}
+              className={`w-8 shrink-0 font-medium ${actionStyle[entry.action]} sm:w-10`}
             >
               {entry.action}
             </span>
-            <span className="w-20 shrink-0 text-ice-dim">{entry.pair}</span>
-            <span className="truncate text-ice-dim/80">{entry.reason}</span>
+            <span className="w-14 shrink-0 truncate text-ice-dim sm:w-20">
+              {entry.pair}
+            </span>
+            <span className="min-w-0 flex-1 truncate text-ice-dim/80">
+              {entry.reason}
+            </span>
           </div>
         ))}
       </div>
