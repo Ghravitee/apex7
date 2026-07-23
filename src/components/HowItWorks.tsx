@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import type { MouseEvent } from "react";
 
 const steps = [
   {
@@ -30,6 +31,12 @@ const steps = [
     n: "06",
     title: "Monitor and adjust",
     body: "Watch holdings, P&L, and a full activity log — every trade attempted, whether it ran or was skipped, and why. Pause, rewrite the strategy, or withdraw anytime.",
+  },
+  {
+    n: "07",
+    title: "Full autonomy",
+    body: "Once your rules hold up across enough cycles, step back completely. The agent keeps executing indefinitely — bound only by the limits you set, never by your attention. This is the seventh step. It's where the name comes from.",
+    capstone: true,
   },
 ];
 
@@ -73,6 +80,14 @@ export function HowItWorks() {
     return () => clearInterval(id);
   }, []);
 
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    e.currentTarget.style.setProperty("--x", `${x}%`);
+    e.currentTarget.style.setProperty("--y", `${y}%`);
+  };
+
   return (
     <section
       id="how-it-works"
@@ -95,7 +110,8 @@ export function HowItWorks() {
             Setup
           </p>
           <h2 className="mt-3 max-w-lg font-display text-3xl font-bold tracking-tight text-ice sm:text-4xl">
-            Six steps. Then it runs without you.
+            <span className="text-lemon">Seven</span> steps to autonomous
+            execution.
           </h2>
         </div>
 
@@ -105,7 +121,10 @@ export function HowItWorks() {
             return (
               <div
                 key={step.n}
-                className={`relative overflow-hidden rounded-lg border p-6 transition-colors duration-500 ${
+                onMouseMove={handleMouseMove}
+                className={`group relative overflow-hidden rounded-lg border p-6 transition-colors duration-500 ${
+                  step.capstone ? "md:col-span-2" : ""
+                } ${
                   isActive
                     ? "border-lemon/30 bg-panel/70"
                     : "border-line bg-panel/40"
@@ -113,6 +132,14 @@ export function HowItWorks() {
               >
                 <CornerTick position="tl" active={isActive} />
                 <CornerTick position="br" active={isActive} />
+
+                <span
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background:
+                      "radial-gradient(160px circle at var(--x, 50%) var(--y, 0%), rgba(216,255,62,0.07), transparent 70%)",
+                  }}
+                />
 
                 <span
                   className={`pointer-events-none absolute -right-3 -top-8 select-none font-display text-8xl font-bold transition-colors duration-500 ${
@@ -137,7 +164,11 @@ export function HowItWorks() {
                     <h3 className="font-display text-lg font-semibold text-ice">
                       {step.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ice-dim">
+                    <p
+                      className={`mt-2 text-sm leading-relaxed text-ice-dim ${
+                        step.capstone ? "max-w-2xl" : ""
+                      }`}
+                    >
                       {step.body}
                     </p>
                   </div>

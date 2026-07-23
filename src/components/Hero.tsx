@@ -63,10 +63,10 @@ export function Hero() {
               Deploy an agent
             </a>
             <a
-              href="#how-it-works"
-              className="rounded-md border border-line px-6 py-3 text-sm font-medium text-ice-dim transition hover:border-steel hover:text-ice w-full text-center"
+              href="#token"
+              className="rounded-md border border-line px-6 py-3 text-sm font-medium text-ice-dim transition hover:border-lemon/40 hover:bg-lemon/5 hover:text-lemon w-full text-center"
             >
-              See how it works
+              Buy APEX7
             </a>
           </div>
           <p className="mt-6 font-mono text-xs text-steel">

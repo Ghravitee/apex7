@@ -71,12 +71,20 @@ export function CTAFooter() {
               Deploy your first agent on Robinhood Chain. Set your limits, fund
               what you're willing to risk, and watch it work.
             </p>
-            <a
-              href="#"
-              className="mt-8 inline-block rounded-md bg-lemon px-8 py-3.5 text-sm font-semibold text-arctic transition hover:bg-lemon-dim"
-            >
-              Deploy an agent
-            </a>
+            <div className="mt-8 flex flex-col  sm:flex-row items-center gap-4">
+              <a
+                href="#launch"
+                className="rounded-md bg-lemon px-6 py-3 text-sm font-semibold text-arctic transition hover:bg-lemon-dim w-full text-center"
+              >
+                Deploy an agent
+              </a>
+              <a
+                href="#token"
+                className="rounded-md border border-line px-6 py-3 text-sm font-medium text-ice-dim transition hover:border-lemon/40 hover:bg-lemon/5 hover:text-lemon w-full text-center"
+              >
+                Buy APEX7
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -94,7 +102,7 @@ export function CTAFooter() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#"
+              href="https://x.com/apex7ag"
               aria-label="APEX7 on X"
               className="flex h-8 w-8 items-center justify-center rounded-md border border-line text-ice-dim transition hover:border-lemon/40 hover:text-lemon"
             >

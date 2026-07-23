@@ -5,6 +5,8 @@ import { LimitsTable } from "./components/LimitsTable";
 import { RiskTrust } from "./components/RiskTrust";
 import { FAQ } from "./components/FAQ";
 import { CTAFooter } from "./components/CTAFooter";
+import { Pricing } from "./components/Pricing";
+// import { TokenInfo } from "./components/TokenInfo";
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
       <main>
         <Hero />
         <HowItWorks />
+        {/* <TokenInfo /> */}
         <LimitsTable />
+        <Pricing />
         <RiskTrust />
         <FAQ />
       </main>
