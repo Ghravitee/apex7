@@ -109,7 +109,7 @@ export function CTAFooter() {
               <XIcon />
             </a>
             <a
-              href="#"
+              href="https://t.me/apex7channel"
               aria-label="APEX7 on Telegram"
               className="flex h-8 w-8 items-center justify-center rounded-md border border-line text-ice-dim transition hover:border-lemon/40 hover:text-lemon"
             >
