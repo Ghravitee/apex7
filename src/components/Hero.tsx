@@ -63,7 +63,7 @@ export function Hero() {
               Deploy an agent
             </a>
             <a
-              href="#token"
+              href="https://launch.genesispad.app/token/robinhood/0x81da288556B23b5fc83D9662Ffe6De68797217C4"
               className="rounded-md border border-line px-6 py-3 text-sm font-medium text-ice-dim transition hover:border-lemon/40 hover:bg-lemon/5 hover:text-lemon w-full text-center"
             >
               Buy APEX7
