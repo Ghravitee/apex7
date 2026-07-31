@@ -163,7 +163,7 @@ function PricingCard({
         ))}
       </ul>
       <a
-        href="#launch"
+        href="https://t.me/apex7agent_bot"
         className={`relative mt-7 block w-full rounded-md px-6 py-3 text-center text-sm font-semibold transition ${
           tier.featured
             ? "bg-lemon text-arctic hover:bg-lemon-dim"
