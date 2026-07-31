@@ -37,7 +37,7 @@ export function Nav() {
         </nav>
 
         <a
-          href="#launch"
+          href="https://t.me/apex7agent_bot"
           className="flex items-center gap-2 rounded-md bg-lemon px-4 py-2 text-sm font-semibold text-arctic transition hover:bg-lemon-dim"
         >
           <AgentNode />

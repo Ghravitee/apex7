@@ -73,7 +73,7 @@ export function CTAFooter() {
             </p>
             <div className="mt-8 flex flex-col  sm:flex-row items-center gap-4">
               <a
-                href="#launch"
+                href="https://t.me/apex7agent_bot"
                 className="rounded-md bg-lemon px-6 py-3 text-sm font-semibold text-arctic transition hover:bg-lemon-dim w-full text-center"
               >
                 Deploy an agent
